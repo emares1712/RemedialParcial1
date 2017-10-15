@@ -42,19 +42,21 @@ public class ModelOrdenar {
         for(int i = 0; i < array; i++){
             for(int j = 0; j < array - 1; j++){
                 parseo = j + 1;
-                if(Double.parseDouble(modelo.getElementAt(j).toString()) > Double.parseDouble(modelo.getElementAt(i).toString()));
+                if(Double.parseDouble(modelo.getElementAt(j).toString()) > Double.parseDouble(modelo.getElementAt(parseo).toString())){
                 val = Double.parseDouble(modelo.getElementAt(parseo).toString());
                 modelo.setElementAt(modelo.getElementAt(j), parseo);
                 modelo.setElementAt(val, j);
+                }
             }
+                
         }
     }
     public void Promedio(){
         double array = modelo.getSize();
         int parseo;
         double prom = 0;
-        for(int i = 0; i < array; i++){
-            prom += Double.parseDouble(modelo.getElementAt(i).toString());
+        for(int k = 0; k < array; k++){
+            prom += Double.parseDouble(modelo.getElementAt(k).toString());
         }
         numero2 = prom / array;
     }
